@@ -31,48 +31,81 @@
 %% The default is oneside, onecolumn, 10pt, final
 
 %%% Replace here with information related to your conference
-\confshortname{IDETC/CIE 2010}
-\conffullname{the ASME 2010 International Design Engineering Technical Conferences \&\\
-              Computers and Information in Engineering Conference}
+\confshortname{ESDA 2012}
+\conffullname{the ASME 2012 11th Biennial Conference On Engineering Systems Design \\ And Analysis}
 
 %%%%% for date in a single month, use
-\confdate{15-18}
-\confmonth{August}
+\confdate{2-4}
+\confmonth{July}
 %%%%% for date across two months, use
 %\confdate{August 30-September 2}
-\confyear{2010}
-\confcity{Montreal, Quebec}
-\confcountry{Canada}
+\confyear{2012}
+\confcity{Nantes}
+\confcountry{France}
 
 %%% Replace DETC2010/MECH-12345 with the number supplied to you 
 %%% by ASME for your paper.
-\papernum{DETC2010/MECH-12345}
+\papernum{ESDA2012-82141}
 
 %%% You need to remove 'DRAFT: ' in the title for the final submitted version.
-\title{DRAFT: AN ARTICLE CREATED USING \LaTeX2\raisebox{-.3ex}{$\epsilon$}\ IN ASME FORMAT}
+\title{MARKUS, AN OPEN-SOURCE WEB APPLICATION TO ANNOTATE STUDENT PAPRES ON-LINE}
 
 %%% first author
-\author{Harry H. Cheng
+\author{Karen Reid
     \affiliation{
-	Integration Engineering Laboratory\\
-	Department of Mechanical and Aeronautical Engineering\\
-	University of California\\
-	Davis, California 95616\\
-    Email: hhcheng@ucdavis.edu
+	University of Toronto\\
+	40 St. George St.\\
+	Toronto, Ontario M5S 2E4\\ 
+	Canada\\
+    Email: reid@cs.toronto.edu
     }	
 }
 
-%%% second author
-%%% remove the following entry for single author papers
-%%% add more entries for additional authors
-\author{First Coauthor\thanks{Address all correspondence to this author.} \\
-       {\tensfb Second Coauthor}     
-    \affiliation{Department or Division Name\\
-	Company or College Name\\
-	City, State (spelled out), Zip Code\\
-	Country (only if not U.S.)\\
-	Email address (if available)
-    }
+\author{Mike Conley
+    \affiliation{
+	Mozilla Corp.\\
+	Canada\\
+    Email: mike.d.conley@gmail.com
+    }	
+}
+
+\author{Severin Gehwolf
+    \affiliation{
+	University of Toronto\\
+	40 St. George St.\\
+	Toronto, Ontario M5S 2E4\\ 
+	Canada\\
+    Email: severin.gehwolf@utoronto.ca
+    }	
+}
+
+\author{Morgan Magnin \\
+       {\tensfb Guillaume Moreau}   
+    \affiliation{
+	LUNAM Universit\'{e} \\
+	Ecole Centrale de Nantes\\
+	IRCCyN UMR CNRS 6597\\
+	1 rue de la No\"{e} \\
+	BP 92101\\
+	44321 Nantes Cedex 3
+	France\\
+    Email: morgan.magnin@ec-nantes.fr
+    }	
+}
+
+
+\author{Nelle Varoquaux
+    \affiliation{
+	Affiliation ?\\
+    Email: nelle.varoquaux@gmail.com
+    }	
+}
+
+\author{Benjamin Vialle
+    \affiliation{
+	Affiliation ?\\
+    Email: benjaminvialle@gmail.com
+    }	
 }
 
 \begin{document}
@@ -81,7 +114,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-{\it This article illustrates preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. An abstract for an ASME paper should be less than 150 words and is normally in italics.}
+{\it A critical component of the learning process lies in the feedback that students receive on their work that validates their progress, identifies flaws in their thinking, and identifies skills that still need to be learned. Many higher-education institutions have developed an active pedagogy that gives students opportunities for different forms of assessment and feedback. This means that students have numerous lab exercises, assignments, and projects. Both instructors and students thus require effective tools to efficiently manage the submission, assessment, and individualized feedback of students' work. The open-source web application MarkUs aims at meeting these needs: it facilitates the submission and assessment of students? work. Students directly submit their work using MarkUs, rather than printing it, or sending it by email. The instructors or teaching assistants use MarkUs's interface to view the students' work, annotate it, and fill in a marking rubric. Students use the same interface to read the annotations and learn from the assessment. Managing the students' submissions and the instructors assessments within a single online system, has led to several positive pedagogical outcomes: the number of late submissions has decreased, the assessment time has been drastically reduced, students can access their results and read the instructor's feedback immediately after the grading process is completed. Using MarkUs has also significantly reduced the time that instructors spend collecting assignments, creating the marking schemes, passing them on to graders, handling special cases, and returning work to the students.
+
+MarkUs was created and developed at University of Toronto (UofT), Canada. Since summer 2009, students at École Centrale de Nantes (ECN) have joined the MarkUs development team. In use at UofT, University of Waterloo (Canada) and ECN, MarkUs supports the assessment of several thousand students.
+
+In this paper, we introduce MarkUs? features, and illustrate their benefits for higher education through our own teaching experiences and that of our colleagues. We also describe an important benefit of the fact that the tool itself is open-source. MarkUs has been developed entirely by students giving them a valuable learning opportunity as they work on a large software system that real users depend on. Virtuous circles indeed arise, with former users of MarkUs becoming developers and then supervisors of further development.
+
+We will conclude by drawing perspectives about forthcoming features and use, both technically and pedagogically.}
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,12 +134,67 @@ The spacing between abstract and the text heading is two line spaces.  The prima
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{INTRODUCTION}
 
-This article illustrates preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. The \LaTeX\  macro \verb+asme2e.cls+, the {\sc Bib}\TeX\ style file \verb+asmems4.bst+, and the template \verb+asme2e.tex+ that create this article are available on the WWW  at the URL address \verb+http://iel.ucdavis.edu/code/+. To ensure compliance with the 2003 ASME MS4 style guidelines  \cite{asmemanual}, you should modify neither the \LaTeX\ macro \verb+asme2e.cls+ nor the {\sc Bib}\TeX\ style file \verb+asmems4.bst+. By comparing the output generated by typesetting this file and the \LaTeX2\raisebox{-.3ex}{$\epsilon$} source file, you should find everything you need to help you through the preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. Details on using \LaTeX\ can be found in \cite{latex}. Instructions for submitting an electronic version of a paper via ftp for publication on CD-ROM or online  are given at the URL address \verb+http://www.asme.org/pubs/submittal.html+.
+% The main idea : Why is assessing student papers so important, why there are so many difficulties when many students and teachers are involved, how every one of us previously tried to manage with these difficulties, why a tool like MarkUs was needed
+
+One critical pedagogical outcome lies in the optimization of the assessment of students' papers (project reports, homework, exams). Various approaches can be adopted to tackle this issue. One of our previous attempts was to simplify the management and evaluation of work submitted by students through the use of Tablet PCs [add a reference]. If the annotation work is facilitated, the management of students' papers still remains a hot topic: files have to be received by e-mail, temporary stored on the teacher's computer then returned corrected to the sender(s), etc. This method did not completely satisfy us, thus motivating us to turn to a new relevant and effective tool for the assessment of students' work: MarkUs.
+
+MarkUs takes into account the needs expressed by teachers and students. Thanks to a single web-application, it offers a wide range of useful features: 
+\begin{itemize}
+\item All documents submitted by students are centralized (no need to manually manage emails sent by students, no difficulties neither with inappropriate compressed file archives nor with enclosed files that are too heavy, no bad interaction with email spam filters, etc.. ) and versionned (successive versions of each file are stored, so that teachers can track the progress of students over time).
+\item Annotations "types" may be proposed by default, based on the most common errors encountered in previous years;
+\item The teacher can of course add his own comments, save some as "the most frequent comments" and reuse them in other assessments; 
+\item The software manages the deadlines that students have to respect to submit their work. It is possible to specify additional features, like "grace period credits" or "penalty formulas";
+\item Etc.
+\end{itemize}
+
+Students do not need anymore to print their code or to send it by mail to their teachers : all these steps are managed via MarkUs, which recreates the ease and flexibility of grading assignments with pen on paper. 
+
+MarkUs was created at University of Toronto (UoT), Canada. Since summer 2009, students at École Centrale de Nantes (ECN) have joined the MarkUs development team. Already in use at UoT and University of Waterloo (Canada), MarkUs has been deployed at ECN in September 2010. In this paper, we present Markus? features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also put the emphasis on the benefit taken from the fact that such a tool is open-source. 
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{VERY VERY VERY VERY VERY VERY VERY VERY LONG HEADING}
+\section*{THE MARKUS TOOL}
+
+% Presentation of the history, then features, of MarkUs
 
 If the heading should run into more than one line, the run-over is flush left.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{History}
+
+\subsection*{Community}
+Markus is the subject of ongoing developments. Each semester, a dozen of new students participate in the implementation of its features. They are co-supervised by teachers and technical mentors (that often are former students who continue to participate in the evolution of the software).
+
+\subsection{Features}
+
+%Global presentation of the main MarkUs features
+
+The next level of heading is boldface with upper and lower case letters. The heading is flushed left with the left margin. The spacing to the next heading is two line spaces.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Third-Level Heading.}
+
+The third-level of heading follows the style of the second-level heading, but it is indented and followed by a period, a space, and the start of corresponding text.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{THE DEPLOYMENT OF MARKUS}
+
+The deployment in Canada, in France. How is it used? How teachers get used to the tool? How do they use it?
+
+\subsection*{An overview of the use of MarkUs in Higher Education}
+
+Markus is currently used at the University of Toronto, University of Waterloo and Ecole Centrale de Nantes: 
+\begin{itemize}
+\item In University of Toronto, ... %to be filled with info about the number of students and courses impacted
+\item In University of Waterloo, ... %to be filled with info about the number of students and courses impacted
+\item In Ecole Centrale de Nantes, MarkUs has been used since 2010. It impacts both undergraduate and master students, in Computer Science related courses like: algorithmics, C and Java programming, databases, modeling languages (UML). Every year, that is an average of 800 students and 20 teachers that use MarkUs. %to be completed
+\end{itemize}
+
+\subsection*{How teachers are accompanied to use the tool? How they use it?}
+
+Documentation. 
+The global structure: administrator (head of a course), graders (teachers), students.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Second-Level Heading}
@@ -113,13 +207,52 @@ The next level of heading is boldface with upper and lower case letters. The hea
 The third-level of heading follows the style of the second-level heading, but it is indented and followed by a period, a space, and the start of corresponding text.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{PAPER NUMBER}
+\section*{THE IMPACT OF MARKUS}
 
-ASME assigns each accepted paper with a unique number. Replace {\bf DETC98/DAC-1234} in the input file preamble (the location will be obvious) with the paper number supplied to you  by ASME for your paper.
+How the learning process gets improved? How can it be measured? (facts, like: number of students submitting after the deadline; comparisons between the time taken by teachers to comment students works - we have this kind of info from the use if MarkUs by our teachers here at Centrale Nantes, ?)
+
+\subsection{Analysis criterias}
+
+We evaluate the benefit of Markus according to several criteria, that are following: 
+\begin{itemize}
+\item Quantitative: how much does MarkUs increases the speed of the assessment process, how it enhances the number of individual comments left on each students' paper, how students' final evaluation improves thanks to the use of MarkUs during courses;
+\item Qualitative: through annual surveys of teachers and students to validate the adequacy of the tool to teachers' needs, the improvement of teaching and the efficiency in the assessment process.
+\end{itemize}
+These factors have reinforced the idea that Markus was responding to needs that have been expressed for many years. It naturally fits into the learning context, it is easy to handle and, finally, it improves the understanding of students w.r.t. the reports and works they have to prepare (ability to get a personal comment on the submitted work, respect of deadlines, etc.).
+
+\subsection{Results}
+
+Markus is a tool that makes life easier for students and graders thanks to a wide range of useful features, such as: the centralized and versioned submission of the papers, its assessment, the annotation of the code and images/PDF documents directly from the web interface, the possibility to download the documents on his own computer to test the code of the students, etc.. As all these  features have been developed specifically for the educational context, MarkUs improves the global pedagogical quality: it offers the possibility to share annotations among multiple teachers and incorporates a correction (and notation) grid defined by the head-supervisor. It also provides additional organizational element: it is easy and quick to make corrections on large cohorts (e.g. by using "reference annotations" that just copy / paste the most recurrent mistakes) and it is quite motivating for teachers. 
+
+\subsection{Analysis of the impact}
+
+Students became much more respectful of deadlines as they were before (the fact of not being able to present his work once past the due date is important), brought more interest to the annotations left on the platform, and enjoyed the increased speed correction from their charge of TD / TP. In terms of the educational team, Markus helped to unify the criteria for marking a group to another (up to 12 groups, and so many different markers!).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{CONCLUSION AND FURTHER WORK}
+
+So far, the students' works were either paper-printed or emailed to their teachers. MarkUs greatly simplifies these steps by centralizing all these documents. It manages classes and and allows students to work in groups. The software allows teachers to get an overview of the different steps achieved by students thanks to versioning features. As the papers and the corresponding personal assessment are centralized on a single platform, every student can access at any time to their work and the related comments, notes and evaluations of their teachers. This is a major breakthrough compared to the traditional use of paper. The integration of MarkUs in the learning environment results in numerous advantages, for both students and teachers.
+
+Current work focus on the implementation of a testing framework into MarkUs. This means the code submitted by students would be immediately compiled and checked w.r.t. criterias defined by teachers. We also investigate the integration of a plagiarism detection tool into the application, to get automatic hints about the similarity of a submission compared to a previous one. Some of these results would be displayed to students, which would also be a way to prevent them from plagiarism. Finally, we currently study how MarkUs could be extended to meet the needs of research, especially during the peer-reviewing process. 
+
+Based on a policy of innovation both demanding (through the quality assurance process that made the quality of the software) and ambitious, Markus owes its success to the close answer it gives to teachers and students' needs. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Second-Level Heading}
+
+The next level of heading is boldface with upper and lower case letters. The heading is flushed left with the left margin. The spacing to the next heading is two line spaces.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Third-Level Heading.}
+
+The third-level of heading follows the style of the second-level heading, but it is indented and followed by a period, a space, and the start of corresponding text.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{USE OF SI UNITS}
+\section*{VARIOUS GUIDELINES}
+
+This article illustrates preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. The \LaTeX\  macro \verb+asme2e.cls+, the {\sc Bib}\TeX\ style file \verb+asmems4.bst+, and the template \verb+asme2e.tex+ that create this article are available on the WWW  at the URL address \verb+http://iel.ucdavis.edu/code/+. To ensure compliance with the 2003 ASME MS4 style guidelines  \cite{asmemanual}, you should modify neither the \LaTeX\ macro \verb+asme2e.cls+ nor the {\sc Bib}\TeX\ style file \verb+asmems4.bst+. By comparing the output generated by typesetting this file and the \LaTeX2\raisebox{-.3ex}{$\epsilon$} source file, you should find everything you need to help you through the preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. Details on using \LaTeX\ can be found in \cite{latex}. Instructions for submitting an electronic version of a paper via ftp for publication on CD-ROM or online  are given at the URL address \verb+http://www.asme.org/pubs/submittal.html+.
+
 
 An ASME paper should use SI units.  When preference is given to SI units, the U.S. customary units may be given in parentheses or omitted. When U.S. customary units are given preference, the SI equivalent {\em shall} be provided in parentheses or in a supplementary table. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
