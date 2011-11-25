@@ -48,7 +48,7 @@
 \papernum{ESDA2012-82141}
 
 %%% You need to remove 'DRAFT: ' in the title for the final submitted version.
-\title{MARKUS, AN OPEN-SOURCE WEB APPLICATION TO ANNOTATE STUDENT PAPRES ON-LINE}
+\title{MARKUS, AN OPEN-SOURCE WEB APPLICATION TO ANNOTATE STUDENT PAPERS ON-LINE}
 
 %%% first author
 \author{Karen Reid
@@ -84,12 +84,11 @@
     \affiliation{
 	LUNAM Universit\'{e} \\
 	Ecole Centrale de Nantes\\
-	IRCCyN UMR CNRS 6597\\
-	1 rue de la No\"{e} \\
-	BP 92101\\
-	44321 Nantes Cedex 3
+	1 rue de la No\"{e}, BP 92101\\
+	44321 Nantes Cedex 3\\
 	France\\
-    Email: morgan.magnin@ec-nantes.fr
+    Email: morgan.magnin@ec-nantes.fr \\
+    guillaume.moreau@ec-nantes.fr
     }	
 }
 
@@ -103,7 +102,9 @@
 
 \author{Benjamin Vialle
     \affiliation{
-	Affiliation ?\\
+	Mobile Devices Ingenierie\\
+	100, avenue de Stalingrad\\	94800 Villejuif\\
+		France\\
     Email: benjaminvialle@gmail.com
     }	
 }
@@ -116,31 +117,31 @@
 \begin{abstract}
 {\it A critical component of the learning process lies in the feedback that students receive on their work that validates their progress, identifies flaws in their thinking, and identifies skills that still need to be learned. Many higher-education institutions have developed an active pedagogy that gives students opportunities for different forms of assessment and feedback. This means that students have numerous lab exercises, assignments, and projects. Both instructors and students thus require effective tools to efficiently manage the submission, assessment, and individualized feedback of students' work. The open-source web application MarkUs aims at meeting these needs: it facilitates the submission and assessment of students? work. Students directly submit their work using MarkUs, rather than printing it, or sending it by email. The instructors or teaching assistants use MarkUs's interface to view the students' work, annotate it, and fill in a marking rubric. Students use the same interface to read the annotations and learn from the assessment. Managing the students' submissions and the instructors assessments within a single online system, has led to several positive pedagogical outcomes: the number of late submissions has decreased, the assessment time has been drastically reduced, students can access their results and read the instructor's feedback immediately after the grading process is completed. Using MarkUs has also significantly reduced the time that instructors spend collecting assignments, creating the marking schemes, passing them on to graders, handling special cases, and returning work to the students.
 
-MarkUs was created and developed at University of Toronto (UofT), Canada. Since summer 2009, students at École Centrale de Nantes (ECN) have joined the MarkUs development team. In use at UofT, University of Waterloo (Canada) and ECN, MarkUs supports the assessment of several thousand students.
+MarkUs was created and developed at University of Toronto (UofT), Canada. Since summer 2009, students at Ã‰cole Centrale de Nantes (ECN) have joined the MarkUs development team. In use at UofT, University of Waterloo (Canada) and ECN, MarkUs supports the assessment of several thousand students.
 
-In this paper, we introduce MarkUs? features, and illustrate their benefits for higher education through our own teaching experiences and that of our colleagues. We also describe an important benefit of the fact that the tool itself is open-source. MarkUs has been developed entirely by students giving them a valuable learning opportunity as they work on a large software system that real users depend on. Virtuous circles indeed arise, with former users of MarkUs becoming developers and then supervisors of further development.
+In this paper, we introduce MarkUs' features, and illustrate their benefits for higher education through our own teaching experiences and that of our colleagues. We also describe an important benefit of the fact that the tool itself is open-source. MarkUs has been developed entirely by students giving them a valuable learning opportunity as they work on a large software system that real users depend on. Virtuous circles indeed arise, with former users of MarkUs becoming developers and then supervisors of further development.
 
 We will conclude by drawing perspectives about forthcoming features and use, both technically and pedagogically.}
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{nomenclature}
-\entry{A}{You may include nomenclature here.}
-\entry{$\alpha$}{There are two arguments for each entry of the nomemclature environment, the symbol and the definition.}
-\end{nomenclature}
+%\begin{nomenclature}
+%\entry{A}{You may include nomenclature here.}
+%\entry{$\alpha$}{There are two arguments for each entry of the nomemclature environment, the symbol and the definition.}
+%\end{nomenclature}
 
-The spacing between abstract and the text heading is two line spaces.  The primary text heading is  boldface in all capitals, flushed left with the left margin.  The spacing between the  text and the heading is also two line spaces.
+%The spacing between abstract and the text heading is two line spaces.  The primary text heading is  boldface in all capitals, flushed left with the left margin.  The spacing between the  text and the heading is also two line spaces.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{INTRODUCTION}
 
 % The main idea : Why is assessing student papers so important, why there are so many difficulties when many students and teachers are involved, how every one of us previously tried to manage with these difficulties, why a tool like MarkUs was needed
 
-One critical pedagogical outcome lies in the optimization of the assessment of students' papers (project reports, homework, exams). Various approaches can be adopted to tackle this issue. One of our previous attempts was to simplify the management and evaluation of work submitted by students through the use of Tablet PCs [add a reference]. If the annotation work is facilitated, the management of students' papers still remains a hot topic: files have to be received by e-mail, temporary stored on the teacher's computer then returned corrected to the sender(s), etc. This method did not completely satisfy us, thus motivating us to turn to a new relevant and effective tool for the assessment of students' work: MarkUs.
+One critical pedagogical outcome lies in the optimization of the assessment of students' papers (project reports, homework, exams). Various approaches can be adopted to tackle this issue. One of our previous attempts was to simplify the management and evaluation of work submitted by students through the use of Tablet PCs \cite{magnin-tice-2010}. If the annotation work is facilitated, the management of students' papers still remains a hot topic: files have to be received by e-mail, temporary stored on the teacher's computer then returned corrected to the sender(s), etc. This method did not completely satisfy us, thus motivating us to turn to a new relevant and effective tool for the assessment of students' work: MarkUs \cite{markus}.
 
 MarkUs takes into account the needs expressed by teachers and students. Thanks to a single web-application, it offers a wide range of useful features: 
 \begin{itemize}
-\item All documents submitted by students are centralized (no need to manually manage emails sent by students, no difficulties neither with inappropriate compressed file archives nor with enclosed files that are too heavy, no bad interaction with email spam filters, etc.. ) and versionned (successive versions of each file are stored, so that teachers can track the progress of students over time).
+\item All documents submitted by students are centralized (no need to manually manage emails sent by students, no difficulties neither with inappropriate compressed file archives nor with enclosed files that are too heavy, no bad interaction with email spam filters, etc.. ) and versionned (successive versions of each file are stored, so that teachers can track the progress of students over time \cite{Reid05learningby}).
 \item Annotations "types" may be proposed by default, based on the most common errors encountered in previous years;
 \item The teacher can of course add his own comments, save some as "the most frequent comments" and reuse them in other assessments; 
 \item The software manages the deadlines that students have to respect to submit their work. It is possible to specify additional features, like "grace period credits" or "penalty formulas";
@@ -149,7 +150,7 @@ MarkUs takes into account the needs expressed by teachers and students. Thanks t
 
 Students do not need anymore to print their code or to send it by mail to their teachers : all these steps are managed via MarkUs, which recreates the ease and flexibility of grading assignments with pen on paper. 
 
-MarkUs was created at University of Toronto (UoT), Canada. Since summer 2009, students at École Centrale de Nantes (ECN) have joined the MarkUs development team. Already in use at UoT and University of Waterloo (Canada), MarkUs has been deployed at ECN in September 2010. In this paper, we present Markus? features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also put the emphasis on the benefit taken from the fact that such a tool is open-source. 
+MarkUs was created at University of Toronto (UoT), Canada. Since Summer 2009, students at Ã‰cole Centrale de Nantes (ECN) have joined the MarkUs development team. Already in use at UoT and University of Waterloo (Canada), MarkUs has been deployed at ECN in September 2010. In this paper, we present Markus' features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also put the emphasis on the benefit taken from the fact that such a tool is open-source. 
 
 
 
@@ -163,19 +164,26 @@ If the heading should run into more than one line, the run-over is flush left.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{History}
 
+2006: OLM, then MarkUs 
+
+\subsection*{Free software philosophy}
+Markus is a free software, i.e. a software whose use, study, editing and duplication for distribution are permitted, technically and legally, to guarantee a wide range of freedoms to the end-user. Licensed under MIT, it is developed mainly by Canadian and French students.
+Presented at several conferences, Markus receives various outside contributions. Students and teachers from other universities send patches that are integrated with the main branch of development. The presentations in conference can also expand the range of returns on software, and identify additional needs.
+
+One of the major added value of Markus is the integration of many components that are great successes of the free software community: version control module to collect the student code, use of a well-known javascript library to annotate images and PDF documents, integration of annotations in LaTeX and MathML to adapt the tool to the research environment. 
+
 \subsection*{Community}
 Markus is the subject of ongoing developments. Each semester, a dozen of new students participate in the implementation of its features. They are co-supervised by teachers and technical mentors (that often are former students who continue to participate in the evolution of the software).
 
-\subsection{Features}
+Since 2008, more than 45 undergraduate students have participated in the development of MarkUs; some as full-time summer interns, but most working part time on MarkUs as a project course. The fact that we have have uncovered so few major bugs, and that MarkUs has been so well-received by instructors is a testament to the high quality work of these students. 
 
-%Global presentation of the main MarkUs features
+As the development of Markus takes profit from the dynamics of project-based learning, we have been able to establish virtuous circles: students, who were former Markus users, are invited to become contributors, and then act as technical mentors for new projects once they have been graduated. This positive cycle has been extensively described in \cite{magnin-qpes-2011}.
 
-The next level of heading is boldface with upper and lower case letters. The heading is flushed left with the left margin. The spacing to the next heading is two line spaces.
+\subsection*{Features}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Third-Level Heading.}
+Global presentation of the main MarkUs features
 
-The third-level of heading follows the style of the second-level heading, but it is indented and followed by a period, a space, and the start of corresponding text.
+As a web-application, Markus is cross-platform (Windows, Mac OS X, Linux, etc.). As MarkUs can be used through any web browser, it is therefore well-suited to nomadism situations that students and faculty members may encounter in their daily life.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{THE DEPLOYMENT OF MARKUS}
@@ -197,21 +205,11 @@ Documentation.
 The global structure: administrator (head of a course), graders (teachers), students.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Second-Level Heading}
-
-The next level of heading is boldface with upper and lower case letters. The heading is flushed left with the left margin. The spacing to the next heading is two line spaces.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Third-Level Heading.}
-
-The third-level of heading follows the style of the second-level heading, but it is indented and followed by a period, a space, and the start of corresponding text.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{THE IMPACT OF MARKUS}
 
 How the learning process gets improved? How can it be measured? (facts, like: number of students submitting after the deadline; comparisons between the time taken by teachers to comment students works - we have this kind of info from the use if MarkUs by our teachers here at Centrale Nantes, ?)
 
-\subsection{Analysis criterias}
+\subsection*{Analysis criterias}
 
 We evaluate the benefit of Markus according to several criteria, that are following: 
 \begin{itemize}
@@ -220,13 +218,21 @@ We evaluate the benefit of Markus according to several criteria, that are follow
 \end{itemize}
 These factors have reinforced the idea that Markus was responding to needs that have been expressed for many years. It naturally fits into the learning context, it is easy to handle and, finally, it improves the understanding of students w.r.t. the reports and works they have to prepare (ability to get a personal comment on the submitted work, respect of deadlines, etc.).
 
-\subsection{Results}
+\subsection*{Results}
 
 Markus is a tool that makes life easier for students and graders thanks to a wide range of useful features, such as: the centralized and versioned submission of the papers, its assessment, the annotation of the code and images/PDF documents directly from the web interface, the possibility to download the documents on his own computer to test the code of the students, etc.. As all these  features have been developed specifically for the educational context, MarkUs improves the global pedagogical quality: it offers the possibility to share annotations among multiple teachers and incorporates a correction (and notation) grid defined by the head-supervisor. It also provides additional organizational element: it is easy and quick to make corrections on large cohorts (e.g. by using "reference annotations" that just copy / paste the most recurrent mistakes) and it is quite motivating for teachers. 
 
-\subsection{Analysis of the impact}
+\subsection*{Analysis of the impact}
 
-Students became much more respectful of deadlines as they were before (the fact of not being able to present his work once past the due date is important), brought more interest to the annotations left on the platform, and enjoyed the increased speed correction from their charge of TD / TP. In terms of the educational team, Markus helped to unify the criteria for marking a group to another (up to 12 groups, and so many different markers!).
+Students have become much more respectful of deadlines than they were before, thanks to the fact of not being able to submit the papers once the due date is past. MarkUs has raised more interest to the annotations left on the platform. In addition, students have enjoued the increased speed correction from their teachers. 
+
+As far as the educational team is concerned, Markus has helped to unify the criteria for marking groups: even if a large number of students do not have the same teachers, their work is assessed according to the same criteria grid. 
+
+\subsection*{Dissemination}
+
+Markus is developed through a strong international collaboration between three institutions of higher education. These institutions include research laboratories. The philosophy of the research is rooted in the DNA of the software. Markus follows a development process perfectly framed, reinforced by rigorous and efficient quality assurance methods. Moreover, we spend much effort to disseminate our results through publications and conferences. The software, its functionality and its impact on the landscape of higher education were presented at various events. MarkUs received the special mention prize at the third "Troph\'{e}es des Technologies Educative" of the french "Salon de l'Education / Educatice". 
+The availability of source code from Markus on the collaborative and social platform GitHub gives an international visibility to the project. In addition, we currently help current teachers from various european institutions in their prepratory work  for deploying Markus.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{CONCLUSION AND FURTHER WORK}
@@ -238,101 +244,90 @@ Current work focus on the implementation of a testing framework into MarkUs. Thi
 Based on a policy of innovation both demanding (through the quality assurance process that made the quality of the software) and ambitious, Markus owes its success to the close answer it gives to teachers and students' needs. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Second-Level Heading}
+%\section*{VARIOUS GUIDELINES}
 
-The next level of heading is boldface with upper and lower case letters. The heading is flushed left with the left margin. The spacing to the next heading is two line spaces.
+%This article illustrates preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. The \LaTeX\  macro \verb+asme2e.cls+, the {\sc Bib}\TeX\ style file \verb+asmems4.bst+, and the template \verb+asme2e.tex+ that create this article are available on the WWW  at the URL address \verb+http://iel.ucdavis.edu/code/+. To ensure compliance with the 2003 ASME MS4 style guidelines  \cite{asmemanual}, you should modify neither the \LaTeX\ macro \verb+asme2e.cls+ nor the {\sc Bib}\TeX\ style file \verb+asmems4.bst+. By comparing the output generated by typesetting this file and the \LaTeX2\raisebox{-.3ex}{$\epsilon$} source file, you should find everything you need to help you through the preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. Details on using \LaTeX\ can be found in \cite{latex}. Instructions for submitting an electronic version of a paper via ftp for publication on CD-ROM or online  are given at the URL address \verb+http://www.asme.org/pubs/submittal.html+.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection*{Third-Level Heading.}
+%
+%An ASME paper should use SI units.  When preference is given to SI units, the U.S. customary units may be given in parentheses or omitted. When U.S. customary units are given preference, the SI equivalent {\em shall} be provided in parentheses or in a supplementary table. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{MATHEMATICS}
 
-The third-level of heading follows the style of the second-level heading, but it is indented and followed by a period, a space, and the start of corresponding text.
+%Equations should be numbered consecutively beginning with (1) to the end of the paper, including any appendices.  The number should be enclosed in parentheses and set flush right in the column on the same line as the equation.  An extra line of space should be left above and below a displayed equation or formula. \LaTeX\ can automatically keep track of equation numbers in the paper and format almost any equation imaginable. An example is shown in Eqn.~(\ref{eq_ASME}). The number of a referenced equation in the text should be preceded by Eqn.\ unless the reference starts a sentence in which case Eqn.\ should be expanded to Equation.
 
+%\begin{equation}
+%f(t) = \int_{0_+}^t F(t) dt + \frac{d g(t)}{d t}
+%\label{eq_ASME}
+%\end{equation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{VARIOUS GUIDELINES}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{FIGURES AND TABLES}
 
-This article illustrates preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. The \LaTeX\  macro \verb+asme2e.cls+, the {\sc Bib}\TeX\ style file \verb+asmems4.bst+, and the template \verb+asme2e.tex+ that create this article are available on the WWW  at the URL address \verb+http://iel.ucdavis.edu/code/+. To ensure compliance with the 2003 ASME MS4 style guidelines  \cite{asmemanual}, you should modify neither the \LaTeX\ macro \verb+asme2e.cls+ nor the {\sc Bib}\TeX\ style file \verb+asmems4.bst+. By comparing the output generated by typesetting this file and the \LaTeX2\raisebox{-.3ex}{$\epsilon$} source file, you should find everything you need to help you through the preparation of ASME paper using \LaTeX2\raisebox{-.3ex}{$\epsilon$}. Details on using \LaTeX\ can be found in \cite{latex}. Instructions for submitting an electronic version of a paper via ftp for publication on CD-ROM or online  are given at the URL address \verb+http://www.asme.org/pubs/submittal.html+.
+%All figures should be positioned at the top of the page where possible.  All figures should be numbered consecutively and captioned; the caption uses all capital letters, and centered under the figure as shown in Fig.~\ref{figure_ASME}. All text within the figure should be no smaller than 7~pt. There should be a minimum two line spaces between figures and text. The number of a referenced figure or table in the text should be preceded by Fig.\ or Tab.\ respectively unless the reference starts a sentence in which case Fig.\ or Tab.\ should be expanded to Figure or Table.
 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% begin figure %%%%%%%%%%%%%%%%%%%
+%\begin{figure}[t]
+%\begin{center}
+%\setlength{\unitlength}{0.012500in}%
+%\begin{picture}(115,35)(255,545)
+%\thicklines
+%\put(255,545){\framebox(115,35){}}
+%\put(275,560){Beautiful Figure}
+%\end{picture}
+%\end{center}
+%\caption{THE FIGURE CAPTION USES CAPITAL LETTERS.}
+%\label{figure_ASME} 
+%\end{figure}
+%%%%%%%%%%%%%%%%% end figure %%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-An ASME paper should use SI units.  When preference is given to SI units, the U.S. customary units may be given in parentheses or omitted. When U.S. customary units are given preference, the SI equivalent {\em shall} be provided in parentheses or in a supplementary table. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{MATHEMATICS}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% begin table   %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table}[t]
+%\caption{THE TABLE CAPTION USES CAPITAL LETTERS, TOO.}
+%\begin{center}
+%\label{table_ASME}
+%\begin{tabular}{c l l}
+%& & \\ % put some space after the caption
+%\hline
+%Example & Time & Cost \\
+%\hline
+%1 & 12.5 & \$1,000 \\
+%2 & 24 & \$2,000 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%\end{table}
+%%%%%%%%%%%%%%%%% end table %%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Equations should be numbered consecutively beginning with (1) to the end of the paper, including any appendices.  The number should be enclosed in parentheses and set flush right in the column on the same line as the equation.  An extra line of space should be left above and below a displayed equation or formula. \LaTeX\ can automatically keep track of equation numbers in the paper and format almost any equation imaginable. An example is shown in Eqn.~(\ref{eq_ASME}). The number of a referenced equation in the text should be preceded by Eqn.\ unless the reference starts a sentence in which case Eqn.\ should be expanded to Equation.
+%All tables should be numbered consecutively and  captioned; the caption should use all capital letters, and centered above the table as shown in Table~\ref{table_ASME}. The body of the table should be no smaller than 7 pt.  There should be a minimum two line spaces between tables and text.
 
-\begin{equation}
-f(t) = \int_{0_+}^t F(t) dt + \frac{d g(t)}{d t}
-\label{eq_ASME}
-\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{FOOTNOTES\protect\footnotemark}
+%\footnotetext{Examine the input file, asme2e.tex, to see how a footnote is given in a head.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{FIGURES AND TABLES}
+%Footnotes are referenced with superscript numerals and are numbered consecutively from 1 to the end of the paper\footnote{Avoid footnotes if at all possible.}. Footnotes should appear at the bottom of the column in which they are referenced.
 
-All figures should be positioned at the top of the page where possible.  All figures should be numbered consecutively and captioned; the caption uses all capital letters, and centered under the figure as shown in Fig.~\ref{figure_ASME}. All text within the figure should be no smaller than 7~pt. There should be a minimum two line spaces between figures and text. The number of a referenced figure or table in the text should be preceded by Fig.\ or Tab.\ respectively unless the reference starts a sentence in which case Fig.\ or Tab.\ should be expanded to Figure or Table.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{CITING REFERENCES}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The ASME reference format is defined in the authors kit provided by the ASME.  The format is:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%% begin figure %%%%%%%%%%%%%%%%%%%
-\begin{figure}[t]
-\begin{center}
-\setlength{\unitlength}{0.012500in}%
-\begin{picture}(115,35)(255,545)
-\thicklines
-\put(255,545){\framebox(115,35){}}
-\put(275,560){Beautiful Figure}
-\end{picture}
-\end{center}
-\caption{THE FIGURE CAPTION USES CAPITAL LETTERS.}
-\label{figure_ASME} 
-\end{figure}
-%%%%%%%%%%%%%%%% end figure %%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{quotation}
+%{\em Text Citation}. Within the text, references should be cited in  numerical order according to their order of appearance.  The numbered reference citation should be enclosed in brackets.
+%\end{quotation}
 
+%The references must appear in the paper in the order that they were cited.  In addition, multiple citations (3 or more in the same brackets) must appear as a `` [1-3]''.  A complete definition of the ASME reference format can be found in the  ASME manual \cite{asmemanual}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%% begin table   %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[t]
-\caption{THE TABLE CAPTION USES CAPITAL LETTERS, TOO.}
-\begin{center}
-\label{table_ASME}
-\begin{tabular}{c l l}
-& & \\ % put some space after the caption
-\hline
-Example & Time & Cost \\
-\hline
-1 & 12.5 & \$1,000 \\
-2 & 24 & \$2,000 \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-%%%%%%%%%%%%%%%% end table %%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The bibliography style required by the ASME is unsorted with entries appearing in the order in which the citations appear. If that were the only specification, the standard {\sc Bib}\TeX\ unsrt bibliography style could be used. Unfortunately, the bibliography style required by the ASME has additional requirements (last name followed by first name, periodical volume in boldface, periodical number inside parentheses, etc.) that are not part of the unsrt style. Therefore, to get ASME bibliography formatting, you must use the \verb+asmems4.bst+ bibliography style file with {\sc Bib}\TeX. This file is not part of the standard BibTeX distribution so you'll need to place the file someplace where LaTeX can find it (one possibility is in the same location as the file being typeset).
 
-All tables should be numbered consecutively and  captioned; the caption should use all capital letters, and centered above the table as shown in Table~\ref{table_ASME}. The body of the table should be no smaller than 7 pt.  There should be a minimum two line spaces between tables and text.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{FOOTNOTES\protect\footnotemark}
-\footnotetext{Examine the input file, asme2e.tex, to see how a footnote is given in a head.}
-
-Footnotes are referenced with superscript numerals and are numbered consecutively from 1 to the end of the paper\footnote{Avoid footnotes if at all possible.}. Footnotes should appear at the bottom of the column in which they are referenced.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{CITING REFERENCES}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The ASME reference format is defined in the authors kit provided by the ASME.  The format is:
-
-\begin{quotation}
-{\em Text Citation}. Within the text, references should be cited in  numerical order according to their order of appearance.  The numbered reference citation should be enclosed in brackets.
-\end{quotation}
-
-The references must appear in the paper in the order that they were cited.  In addition, multiple citations (3 or more in the same brackets) must appear as a `` [1-3]''.  A complete definition of the ASME reference format can be found in the  ASME manual \cite{asmemanual}.
-
-The bibliography style required by the ASME is unsorted with entries appearing in the order in which the citations appear. If that were the only specification, the standard {\sc Bib}\TeX\ unsrt bibliography style could be used. Unfortunately, the bibliography style required by the ASME has additional requirements (last name followed by first name, periodical volume in boldface, periodical number inside parentheses, etc.) that are not part of the unsrt style. Therefore, to get ASME bibliography formatting, you must use the \verb+asmems4.bst+ bibliography style file with {\sc Bib}\TeX. This file is not part of the standard BibTeX distribution so you'll need to place the file someplace where LaTeX can find it (one possibility is in the same location as the file being typeset).
-
-With \LaTeX/{\sc Bib}\TeX, \LaTeX\ uses the citation format set by the class file and writes the citation information into the .aux file associated with the \LaTeX\ source. {\sc Bib}\TeX\ reads the .aux file and matches the citations to the entries in the bibliographic data base file specified in the \LaTeX\ source file by the \verb+\bibliography+ command. {\sc Bib}\TeX\ then writes the bibliography in accordance with the rules in the bibliography .bst style file to a .bbl file which \LaTeX\ merges with the source text.  A good description of the use of {\sc Bib}\TeX\ can be found in \cite{latex, goosens} (see how 2 references are handled?).  The following is an example of how three or more references \cite{latex, asmemanual,  goosens} show up using the \verb+asmems4.bst+ bibliography style file in conjunction with the \verb+asme2e.cls+ class file. Here are some more \cite{art, blt, ibk, icn, ips, mts, mis, pro, pts, trt, upd} which can be used to describe almost any sort of reference.
+%With \LaTeX/{\sc Bib}\TeX, \LaTeX\ uses the citation format set by the class file and writes the citation information into the .aux file associated with the \LaTeX\ source. {\sc Bib}\TeX\ reads the .aux file and matches the citations to the entries in the bibliographic data base file specified in the \LaTeX\ source file by the \verb+\bibliography+ command. {\sc Bib}\TeX\ then writes the bibliography in accordance with the rules in the bibliography .bst style file to a .bbl file which \LaTeX\ merges with the source text.  A good description of the use of {\sc Bib}\TeX\ can be found in \cite{latex, goosens} (see how 2 references are handled?).  The following is an example of how three or more references \cite{latex, asmemanual,  goosens} show up using the \verb+asmems4.bst+ bibliography style file in conjunction with the \verb+asme2e.cls+ class file. Here are some more \cite{art, blt, ibk, icn, ips, mts, mis, pro, pts, trt, upd} which can be used to describe almost any sort of reference.
 
 % Here's where you specify the bibliography style file.
 % The full file name for the bibliography style file 
@@ -365,20 +360,20 @@ ASME bibliography stype file \verb+asmems4.bst+.
 % The full file name of the bibliography database for this
 % article is asme2e.bib. The name for your database is up
 % to you.
-\bibliography{markus-esda-2012}
+\bibliography{markus-esda-2012.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix       %%% starting appendix
-\section*{Appendix A: Head of First Appendix}
-Avoid Appendices if possible.
+%\appendix       %%% starting appendix
+%\section*{Appendix A: Head of First Appendix}
+%Avoid Appendices if possible.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Appendix B: Head of Second Appendix}
-\subsection*{Subsection head in appendix}
-The equation counter is not reset in an appendix and the numbers will
-follow one continual sequence from the beginning of the article to the very end as shown in the following example.
-\begin{equation}
-a = b + c.
-\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Appendix B: Head of Second Appendix}
+%\subsection*{Subsection head in appendix}
+%The equation counter is not reset in an appendix and the numbers will
+%follow one continual sequence from the beginning of the article to the very end as shown in the following example.
+%\begin{equation}
+%a = b + c.
+%\end{equation}
 
 \end{document}
