@@ -1,0 +1,8 @@
+# LaTeX files we shouldn't add to the repository
+markus-paper-main.aux
+markus-paper-main.bbl
+markus-paper-main.blg
+markus-paper-main.dvi
+markus-paper-main.log
+markus-paper-main.pdf
+markus-paper-main.synctex.gz
