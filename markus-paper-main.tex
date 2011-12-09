@@ -18,7 +18,7 @@
 
 %%% use twocolumn and 10pt options with the asme2e format
 \documentclass[twocolumn,10pt]{asme2e}
-
+\usepackage[utf8]{inputenc}
 %% The class has several options
 %  onecolumn/twocolumn - format for one or two columns per page
 %  10pt/11pt/12pt - use 10, 11, or 12 point font
@@ -160,7 +160,7 @@ MarkUs was created at University of Toronto (UoT), Canada. Since Summer 2009, st
 
 % Presentation of the history, then features, of MarkUs
 
-If the heading should run into more than one line, the run-over is flush left.
+% If the heading should run into more than one line, the run-over is flush left.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{History}
@@ -168,7 +168,14 @@ If the heading should run into more than one line, the run-over is flush left.
 %%% TO BE CORRECTED - start
 
 %2006: OLM, then MarkUs
-MarkUs was initially called OLM, for Online Marking Tool. Started in 2005, the Online Marking tool was a web application motivated by improving the effectiveness and efficiency of marking lower year Computer Science assignments. It displayed all the needed information to mark an assignment: The content, comments, marking scheme and more, all in one place. It also supports easy migration by importing and exporting data in XML format. Developed from 2005 to 2007 in Python using the Django framework, the source code was not easy to understand and too messy to be correctly maintained.
+MarkUs was initially called OLM, for Online Marking Tool. Started in 2005, the
+Online Marking tool was a web application motivated by improving the
+effectiveness and efficiency of marking lower year Computer Science
+assignments. It displayed all the needed information to mark an assignment:
+The content, comments, marking scheme and more, all in one place. It also
+supports easy migration by importing and exporting data in XML format.
+Developed from 2005 to 2007 in Python using the TurboGears framework, 
+the source code was not easy to understand and too messy to be correctly maintained.
 % Perhaps a link to https://stanley.cdf.toronto.edu/drproject/csc49x/olm
 
 Karen Reid, with the team agreement, decided to start a rewriting in Ruby using the Ruby on Rails framework in 2008. Called Markus. One year later, all functionality of OLM were implemented in Markus.
@@ -191,10 +198,30 @@ As the development of Markus takes profit from the dynamics of project-based lea
 \subsection*{Features}
 %Global presentation of the main MarkUs features
 
-As a web-application, Markus is cross-platform (Windows, Mac OS X, Linux, etc.). As MarkUs can be used through any web browser, it is therefore well-suited to nomadism situations that students and faculty members may encounter in their daily life.
+As a web-application, Markus is cross-platform (Windows, Mac OS X, Linux,
+etc.). As MarkUs can be used through any web browser, it is therefore
+well-suited to nomadism situations that students and faculty members may
+encounter in their daily life.
 
 %%% TO BE MODIFIED - beginning
-Students post their source code, diagrams, pictures and schemas on MarkUs, were they can form groups. It is a web-based file upload for first-year courses or a subversion client commits for upper year courses (when disabled web-upload). Documents and source code of students' projects are stored in a Subversion repository, to handle different versions and conflicts. Then, graders can easily annotate students' code (overlapping annotations, graded source code remains untouched) or diagrams and pictures (without modifying original files). Instructors can allow students to work on code of other groups from one assignment to the next. During the grading process, students can send remark requests to their assigned grader.
+Through the configuration of an assignment, intructors can enforce submission
+deadlines, marking schemes, automatic penalties, and group and grader
+management (max and min number of students per groups, who grades which
+student group or what part of the assignment).
+
+Once the assignment is properly set up, students can start forming groups by
+inviting other students; accepting or rejecting invitations. Once group
+requirements are met, they can start submitting their source code, diagrams,
+pictures and schemas on MarkUs. In order to handle automatic version control,
+a subversion repository is plugged in the backend of the webfile upload. For
+more advanced courses, direct command line access to the repository is
+possible.
+
+Once the due date is passed, graders can easily annotate students' code,
+diagrams and pictures. Markus allows instructors to create annotation
+categories and load default annotations. Hence, graders do not need to retype
+commonly used comments.
+
 %%% TO BE MODIFIED - end
 
 %%% Add one screenshot of MarkUs, maybe about annotation of code
@@ -217,7 +244,13 @@ Markus is currently used at the University of Toronto, University of Waterloo an
 
 \subsection*{How teachers are accompanied to use the tool? How they use it?}
 
-MarkUs is easy to handle, thus its use does not require a long formation. It is provided with an extensive documentation, available in both english and french. This documentation has been structured so that the head-teacher, teachers and students can find the information they are looking for. There are as many documentation cases as these three situations, meaning we have a manual for administrators (which should be the head of a course), graders (i.e. teachers) and students. 
+MarkUs is easy to handle, thus its use does not require a long formation. It
+is provided with an extensive documentation, available in both english and
+french. This documentation has been structured so that the head-teacher,
+teachers and students can find the information they are looking for. There are
+as many documentation cases as these three situations, meaning we have a
+manual for administrators (which should be the head of a course), graders
+(i.e. teachers) and students. 
 
 In our institutions, there are one or two teachers that play the role of "referees" for the software, meaning that every encountered issue can be forwarded to them. Thanks to their knowledge about MarkUs, they can help their fellow teachers with problems that can be overcome. When the issue is an unknown one, they can contact the development team, that may open a ticket. It is fundamental to have these people as interfaces with the development team, allowing to synthesize feedback and give hints about awaited features. 
 
