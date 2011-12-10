@@ -172,14 +172,14 @@ Born during the summer 2005 as Online Marking Tool (OLM) the project aimed at
 improving the effectiveness and efficiency of marking lower year Computer
 Science assignments. Built using the Python web framework Turbogears, OLM
 provided a full workflow support for an entire-life cycle of an university
-course: group creation, code viewer with syntax highlighting, marking
-schemes, annotations. After 2 years of development, the project suffered from
-a poor quality code base and a lack of testing: integrating new features had
-become a burden.
+course: group creation, code viewer with syntax highlighting, marking schemes,
+annotations... After 2 years of development, the project suffered from a poor
+quality code base and a lack of testing: integrating new features had become a
+burden.
 
 In 2008, it was decided to rewrite the whole application in Ruby on Rails. OLM
-was reborned into MarkUs. One year later, all functionalities of OLM were
-implemented in MarkUs.
+was born again as MarkUs. A year later, MarkUs was used for the first time as
+a replacement to OLM.
 
 %%% TO BE CORRECTED - end
 
@@ -205,23 +205,28 @@ well-suited to nomadism situations that students and faculty members may
 encounter in their daily life.
 
 %%% TO BE MODIFIED - beginning
-Through the configuration of an assignment, intructors can enforce submission
-deadlines, marking schemes, automatic penalties, and group and grader
-management (max and min number of students per groups, who grades which
-student group or what part of the assignment).
+Intructors can enforce submission deadlines, marking schemes, automatic
+penalties, and group and grader management (max and min number of students per
+groups, who grades which student group or what part of the assignment).
 
 Once the assignment is properly set up, students can start forming groups by
-inviting other students; accepting or rejecting invitations. Once group
+inviting other students, accepting or rejecting invitations. When group
 requirements are met, they can start submitting their source code, diagrams,
 pictures and schemas on MarkUs. In order to handle automatic version control,
 a subversion repository is plugged in the backend of the webfile upload. For
 more advanced courses, direct command line access to the repository is
 possible.
 
-Once the due date is passed, graders can easily annotate students' code,
+After the due date is passed, graders can easily annotate students' code,
 diagrams and pictures. MarkUs allows instructors to create annotation
-categories and load default annotations. Hence, graders do not need to retype
-commonly used comments.
+categories, load default annotations and graders to save some. Hence, graders
+do not need to retype commonly used comments. In order to facilitate
+consistent grading, two marking schemes are available: a criteria based one,
+or a flexible grading system.
+
+On the fly feedback on grades is given to instructors, allowing marking
+schemes readjustments. When grades are released, students can view feedbacks
+and marks of assignments online, or download a PDF version.
 
 %%% TO BE MODIFIED - end
 
