@@ -138,20 +138,36 @@ We will conclude by drawing perspectives about forthcoming features and use, bot
 
 % The main idea : Why is assessing student papers so important, why there are so many difficulties when many students and teachers are involved, how every one of us previously tried to manage with these difficulties, why a tool like MarkUs was needed
 
-One critical pedagogical outcome lies in the optimization of the assessment of students' papers (project reports, homework, exams). Various approaches can be adopted to tackle this issue. One of our previous attempts was to simplify the management and evaluation of work submitted by students through the use of Tablet PCs \cite{magnin-tice-2010}. If the annotation work is facilitated, the management of students' papers still remains a hot topic: files have to be received by e-mail, temporary stored on the teacher's computer then returned corrected to the sender(s), etc. This method did not completely satisfy us, thus motivating us to turn to a new relevant and effective tool for the assessment of students' work: MarkUs \cite{markus}.
+Assessing and providing feedback on student work is a critical and time consuming component of any course. Receiving timely, high quality feedback is a important pedagogic goal of any course. MarkUs is designed to simplify the process of submitting work, provide an intuitive interface to annotate students work and record grades, and reduce the administrative task of the instructors. 
 
-MarkUs takes into account the needs expressed by teachers and students. Thanks to a single web-application, it offers a wide range of useful features: 
+With all types of work submitted by students there are a number of steps involved.
+
 \begin{itemize}
-\item All documents submitted by students are centralized (no need to manually manage emails sent by students, no difficulties neither with inappropriate compressed file archives nor with enclosed files that are too heavy, no bad interaction with email spam filters, etc.. ) and versionned (successive versions of each file are stored, so that teachers can track the progress of students over time \cite{Reid05learningby}).
-\item Annotations "types" may be proposed by default, based on the most common errors encountered in previous years;
-\item The teacher can of course add his own comments, save some as "the most frequent comments" and reuse them in other assessments; 
-\item The software manages the deadlines that students have to respect to submit their work. It is possible to specify additional features, like "grace period credits" or "penalty formulas";
-\item Etc.
+        \item Submissions. Students use some mechanism to submit their work either on paper or electronically.
+        \item Assessment.  Some form of grading scheme is used to evaluate the students' work.
+        \item Feedback. The graders provide feedback in the form of general comments or annotations on the students' work.
+        \item Distribution. The work is returned to the student with the grade and the feedback.
+        \item Record keeping. The instructor collects the grades to determine a final evaluation.
 \end{itemize}
 
-Students do not need anymore to print their code or to send it by mail to their teachers : all these steps are managed via MarkUs, which recreates the ease and flexibility of grading assignments with pen on paper. 
+Of these steps the most challenging is to provide high quality feedback efficiently. While there are many advantages to submitting work electronically, it is challenging to provide the kind of simple efficient feedback achieved by circling incorrect work or drawing a few arrows directly on a paper submission. One of our previous attempts simplified the management and evaluation of work submitted electronically by students through the use of Tablet PCs \cite{magnin-tice-2010}. Although this approach facilitated annotating their work, the management of students' submission still remains a hot topic: in the past, we received files by e-mail, temporarily stored on the instructor's computer then returned them corrected to the sender(s). This method is error prone, time consuming and only works for small to medium class sizes, thus motivating us to turn to a new relevant and effective tool for the assessment of students' work: MarkUs \cite{markus}.
 
-MarkUs was created at University of Toronto (UoT), Canada. Since Summer 2009, students at Ecole Centrale de Nantes (ECN) have joined the MarkUs development team. Already in use at UoT and University of Waterloo (Canada), MarkUs has been deployed at ECN in September 2010. In this paper, we present MarkUs' features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also put the emphasis on the benefit taken from the fact that such a tool is open-source. 
+MarkUs takes into account the needs expressed by teachers and students. A single web-application, its primary features follow:
+\begin{itemize}
+\item Students submit documents using MarkUs. This has the advantage that graders and instructors do not need to manage submissions via email, or copy submissions around. Documents are versioned (i.e., successive versions of each file are stored), so that teachers can track the progress of students over time \cite{Reid05learningby}. Students can easily see exactly what they submitted, allowing them to check their work.
+\item Graders view student documents and add annotations within MarkUs. They also fill in a grading scheme created by the instructor. 
+\item A standard set of reusable annotations may be created ahead of time, and graders may save annotations for later reuse.
+\item The software manages the deadlines that students must respect to submit their work. It is possible to specify additional features, like ``grace period credits" or ``penalty formulas";
+\item When the grading of an assignment or piece of work has been completed, the instructor can ``release'' the grades to the students.
+\item Students view their grades and feedback through a read-only view of the same interface graders used to generate the feedback.
+\item Instructors may download grades for further processing.
+\end{itemize}
+
+Additional features are described in section~\ref{features}.
+
+Students no longer need to print their code, or send it by email to their teachers: all these steps are managed via MarkUs, which recreates the ease and flexibility of grading assignments with pen on paper. 
+
+MarkUs was created at University of Toronto (UofT), Canada. Since summer 2009, students at Ecole Centrale de Nantes (ECN) have joined the MarkUs development team. First used at UofT in September 2009, and at the University of Waterloo (Canada) in January 2010, MarkUs was deployed at ECN in September 2010. In this paper, we present MarkUs' features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also put the emphasis on the benefit taken from the fact that such a tool is open-source. 
 
 
 
@@ -197,6 +213,7 @@ Since 2008, more than 45 undergraduate students have participated in the develop
 As the development of MarkUs takes profit from the dynamics of project-based learning, we have been able to establish virtuous circles: students, who were former MarkUs users, are invited to become contributors, and then act as technical mentors for new projects once they have been graduated. This positive cycle has been extensively described in \cite{magnin-qpes-2011}.
 
 \subsection*{Features}
+\label{features}
 %Global presentation of the main MarkUs features
 
 As a web-application, MarkUs is cross-platform (Windows, Mac OS X, Linux,
