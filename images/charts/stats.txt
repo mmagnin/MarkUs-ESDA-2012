@@ -1,0 +1,18 @@
+Project name
+Markus
+Generated
+2011-12-27 17:07:40 (in 27 seconds)
+Generator
+GitStats (version 2011.11.08), git version 1.7.7.3, gnuplot 4.4 patchlevel 0
+Report Period
+2008-07-18 02:09:38 to 2011-12-19 10:38:14
+Age
+1250 days, 554 active days (44.32%)
+Total Files
+2032
+Total Lines of Code
+92638 (315352 added, 222714 removed)
+Total Commits
+2184 (average 3.9 commits per active day, 1.7 per all days)
+Authors
+54 (average 40.4 commits per author)
