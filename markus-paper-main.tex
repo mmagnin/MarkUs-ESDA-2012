@@ -19,6 +19,8 @@
 %%% use twocolumn and 10pt options with the asme2e format
 \documentclass[twocolumn,10pt]{asme2e}
 \usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+\usepackage{subfigure}
 %% The class has several options
 %  onecolumn/twocolumn - format for one or two columns per page
 %  10pt/11pt/12pt - use 10, 11, or 12 point font
@@ -219,7 +221,7 @@ As the development of MarkUs takes profit from the dynamics of project-based lea
 As a web-application, MarkUs is cross-platform (Windows, Mac OS X, Linux,
 etc.). As MarkUs can be used through any web browser, it is therefore
 well-suited to nomadism situations that students and faculty members may
-encounter in their daily life.
+encounter in their daily life. MarkUs features are summarized in Figure~\ref{fig:features}.
 
 Instructors can enforce submission deadlines, marking schemes, automatic
 penalties, and group and grader management (max and min number of students per
@@ -243,6 +245,13 @@ or a flexible grading system.
 On the fly feedback on grades is given to instructors, allowing marking
 schemes readjustments. When grades are released, students can view feedbacks
 and marks of assignments online, or download a PDF version.
+
+\begin{figure*}[htbp]
+	\centering
+		\includegraphics[width=0.95\textwidth]{Diagrams/diagram.png}
+	\caption{MarkUs features.}
+	\label{fig:features}
+\end{figure*}
 
 %%% Add one screenshot of MarkUs, maybe about annotation of code
 
