@@ -186,15 +186,16 @@ In this paper, we will first describe the core MarkUs features as well as more r
 Initiated during the summer 2005 as Online Marking Tool (OLM), the project aimed
 at improving the effectiveness and efficiency of marking lower year Computer
 Science assignments. Built using the Python web framework Turbogears, OLM
-provided an environment to facilitate grading programming assignments online including the ability to annotate student work, and fill in a marking rubric. Through its two-year deployment at the UofT, we learned the strengths and weaknesses of OLM. The ``grader view'', which allowed TAs to annotate and asses the student submissions was very successful, but the administrative overhead was high and we could see many opportunities to improve the user interface for graders. Our plans to extend and enhance OLM were hampered by a decaying code base, lack of adequate tests, and a sense that modern web programming frameworks would be more advantageous to the project.
+provided an environment to facilitate grading programming assignments online including the ability to annotate student work, and fill in a marking rubric. During its three-year deployment at the UofT, we learned the strengths and weaknesses of OLM. The ``grader view'', which allowed TAs to annotate and asses the student submissions was very successful, but the administrative overhead was high and we could see many opportunities to improve the user interface for graders. Our plans to extend and enhance OLM were hampered by a decaying code base, lack of adequate tests, and a sense that modern web programming frameworks would be more advantageous to the project.
 
 In the summer of 2008, it was decided to rewrite the whole application in Ruby on Rails. We kept the best features of OLM as MarkUs took shape, but MarkUs included many new features. One year later, MarkUs was deployed for the first time as a replacement to OLM. Thanks to more careful software development practices, including extensive testing and code reviews, the first deployment of MarkUs went very smoothly.
 
 \subsection*{Free software philosophy}
 MarkUs is free software, i.e. a software whose use, study, editing and duplication for distribution are permitted, technically and legally, to guarantee a wide range of freedoms to the end-user. Licensed under the MIT Open Source License, it is developed mainly by Canadian and French students.
+
 Presented at several conferences, MarkUs receives various outside contributions. Students and teachers from other universities send patches that are integrated with the main branch of development. The presentations in conference can also expand the range of returns on software, and identify additional needs.
 
-One of the major added value of MarkUs is the integration of many components that are widely used in the free software community: version control module to collect the student code, use of a well-known javascript library to annotate images and PDF documents, integration of annotations in LaTeX and MathML to adapt the tool to the research environment. 
+MarkUs benefits from the integration of many components that are widely used in the free software community: a version control module to collect the student code, the use of a well-known javascript library to annotate images and PDF documents, the integration of annotations in LaTeX and MathML to adapt the tool to the research environment. 
 
 \subsection*{Community}
 MarkUs is the subject of ongoing developments. Each semester, a dozen  new students participate in the implementation of its features. They are co-supervised by teachers and technical mentors (that often are former students who continue to participate in the evolution of the software).
