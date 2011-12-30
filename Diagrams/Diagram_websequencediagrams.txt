@@ -1,0 +1,51 @@
+#Diagram done on http://www.websequencediagrams.com/
+#Diagram done on http://www.websequencediagrams.com/
+Administrator->MarkUs: Authentication Request
+activate Administrator
+MarkUs->Administrator: Authentication Success
+deactivate Administrator
+note left of MarkUs
+    MarkUs supports
+    various authentication methods,
+    such as LDAP, HTTP Auth…
+end note
+Student->MarkUs: Authentication Request
+activate Student
+MarkUs->Student: Authentication Success
+deactivate Student
+Grader->MarkUs: Authentication Request
+activate Grader
+MarkUs->Grader: Authentication Success
+deactivate Grader
+
+Administrator->MarkUs: Create assignment
+Administrator->MarkUs: Configure assignment
+Student->MarkUs: Can form groups
+Student->MarkUs: Post their code
+note right of Student
+    Students can send code,
+    images (such as diagrams)
+    and PDF.
+    All these documents
+    can be annotated
+end note
+alt Accept no late submissions
+    Student->MarkUs: Submitting code is allowed, but it will not be graded
+else Automatically deduct grace period credits
+    Student->MarkUs: Submitting code is possible when having grace credits left
+else Use penalty decay formula
+    Student->MarkUs: Submitting code will results in penalties on the final grade
+end
+
+Administrator->MarkUs: Assign Graders to groups of Students
+Grader->MarkUs: Grade student's assignment
+Grader->MarkUs: Annotate student's code
+
+Administrator->MarkUs: Reveal marks and annotations
+Student->MarkUs: Consult marks, annotations and comments
+
+Student->MarkUs: Can request for remarks
+activate Grader
+MarkUs->Grader: Send remark request
+deactivate Grader
+Grader->MarkUs: Change annotation / Add remark
