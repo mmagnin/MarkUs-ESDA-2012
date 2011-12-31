@@ -56,33 +56,7 @@
 \title{MARKUS, AN OPEN-SOURCE WEB APPLICATION TO ANNOTATE STUDENT PAPERS ON-LINE}
 
 %%% first author
-\author{Karen Reid
-    \affiliation{
-	University of Toronto\\
-	40 St. George St.\\
-	Toronto, Ontario M5S 2E4\\ 
-	Canada\\
-    Email: reid@cs.toronto.edu
-    }	
-}
 
-\author{Mike Conley
-    \affiliation{
-	Mozilla Corp.\\
-	Canada\\
-    Email: mike.d.conley@gmail.com
-    }	
-}
-
-\author{Severin Gehwolf
-    \affiliation{
-	University of Toronto\\
-	40 St. George St.\\
-	Toronto, Ontario M5S 2E4\\ 
-	Canada\\
-    Email: severin.gehwolf@utoronto.ca
-    }	
-}
 
 \author{Morgan Magnin \\
        {\tensfb Guillaume Moreau}   
@@ -114,6 +88,34 @@
 	94800 Villejuif\\
 		France\\
     Email: benjaminvialle@gmail.com
+    }	
+}
+
+\author{Karen Reid
+    \affiliation{
+	University of Toronto\\
+	40 St. George St.\\
+	Toronto, Ontario M5S 2E4\\ 
+	Canada\\
+    Email: reid@cs.toronto.edu
+    }	
+}
+
+\author{Mike Conley
+    \affiliation{
+	Mozilla Corp.\\
+	Canada\\
+    Email: mike.d.conley@gmail.com
+    }	
+}
+
+\author{Severin Gehwolf
+    \affiliation{
+	University of Toronto\\
+	40 St. George St.\\
+	Toronto, Ontario M5S 2E4\\ 
+	Canada\\
+    Email: severin.gehwolf@utoronto.ca
     }	
 }
 
@@ -160,7 +162,7 @@ With all types of work submitted by students there are a number of steps involve
 
 Of these steps the most challenging is to provide high quality feedback efficiently. While there are many advantages to submitting work electronically, it is challenging to provide the kind of simple efficient feedback achieved by circling incorrect work or drawing a few arrows directly on a paper submission. One of our previous attempts simplified the management and evaluation of work submitted electronically by students through the use of Tablet PCs \cite{magnin-tice-2010}. Although this approach facilitated annotating their work, the management of students' submission still remained a hot topic: in the past, we received files by e-mail, temporarily stored on the instructor's computer then returned them corrected to the sender(s). This method is error prone, time consuming and only works for small to medium class sizes. Another solution to collect students' work was the use of the submission tools provided by the submission tools of elearning platforms such as Claroline~\cite{claroline} or Moodle~\cite{moodle}. Yet practical to handle numerous submissions and marking, there tools could not be used to handle  annotation of the students' work thus motivating us to turn to a new relevant and effective tool for the assessment of students' work: MarkUs \cite{markus}.
 
-MarkUs was created at University of Toronto (UofT), Canada. Since summer 2009, students at Ecole Centrale de Nantes (ECN) have joined the MarkUs development team. First used at UofT in September 2009, and at the University of Waterloo (Canada) in January 2010, MarkUs was deployed at ECN in September 2010. In this paper, we present MarkUs' features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also put the emphasis on the benefit taken from the fact that such a tool is open-source. 
+MarkUs was created at University of Toronto (UofT), Canada. Since summer 2009, students at Ecole Centrale de Nantes (ECN) have joined the MarkUs development team. First used at UofT in September 2009, and at the University of Waterloo (Canada) in May 2010, MarkUs was deployed at ECN in September 2010. In this paper, we present MarkUs' features, and illustrate their potential assets for higher education through our own feedback. We will not only provide an overview of current uses and future but also emphasize the benefits of open-source for this kind of tool.
 
 MarkUs takes into account the needs expressed by teachers and students. Encompassed in a single web-application, the primary features of MarkUs follow:
 \begin{itemize}
@@ -210,12 +212,12 @@ MarkUs is the subject of ongoing developments. Each semester, a dozen  new stude
 
 Since 2008, more than 45 undergraduate students have participated in the development of MarkUs; some as full-time summer interns, but most working part time on MarkUs as a project course. The fact that we have have uncovered so few major bugs, and that MarkUs has been so well-received by instructors is a testament to the high quality work of these students.
 
-FIXME: Should we add something about ReviewBoard here?
-
 In September 2010, MarkUs's code moved to the public hosting web-service,
 GitHub. Allowing any contributor to patch and improve the project's code base has opened MarkUs is to a wider community.
 
-As the development of MarkUs takes profit from the dynamics of project-based learning, we have been able to establish virtuous circles: students, who were former MarkUs users, are invited to become contributors, and then act as technical mentors for new projects once they have been graduated. This positive cycle has been extensively described in \cite{magnin-qpes-2011}.
+As MarkUs has grown to include developers from different countries, our development process has evolved. We rely on an issue tracker to keep track of outstanding feature requests and bugs or flaws in the system. Good communication is key both to helping new developers get up to speed and to ensure that the quality of the code is maintained.  We depend on a mailing list and IRC chat room for discussions of all sorts. The best addition to the development process has been the adoption of Review Board\cite{reviewboard}, a code-review tool. Every change to the system first undergoes peer review before it is pulled into the production system.
+
+As the development of MarkUs profits from the dynamics of project-based learning, we have been able to establish virtuous circles: students, who were former MarkUs users, are invited to become contributors, and then act as technical mentors for new projects once they have been graduated. This positive cycle has been extensively described in \cite{magnin-qpes-2011}.
 
 \subsection*{Features}
 \label{features}
@@ -277,7 +279,7 @@ The general philosophy of MarkUs is a permissive one, allowing users to perform 
 \begin{figure*}[htbp]
 	\centering
 		\includegraphics[width=0.95\textwidth]{images/graderview.png}
-	\caption{MarkUs features.}
+	\caption{The grader interface}
 	\label{fig:grader}
 \end{figure*}
 %%% Add one screenshot of MarkUs, maybe about annotation of code
@@ -285,7 +287,7 @@ The general philosophy of MarkUs is a permissive one, allowing users to perform 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{THE DEPLOYMENT OF MARKUS}
 
-MarkUs has been used in Computer Science related courses since Fall 2009 in Canada and since 2010 in France. In this section, we will detail how students and teachers learn to use the tool.
+MarkUs has been used in Computer Science related courses since fall 2009 in Canada and since 2010 in France. In this section, we will detail how students and teachers learn to use the tool.
 
 \subsection*{An overview of the use of MarkUs in Higher Education}
 
@@ -296,7 +298,7 @@ MarkUs is currently used at the University of Toronto, University of Waterloo an
 \item In Ecole Centrale de Nantes, MarkUs has been used since 2010. FIXME
 \end{itemize}
 
-MarkUs impacts both undergraduate and master students, in Computer Science related courses like: algorithmics, C and Java programming, databases, modeling languages (UML). %Every year, that is an average of 800 students and 20 teachers that use MarkUs in each of the aforementioned institutions. %to be completed
+MarkUs impacts both undergraduate and master students, in Computer Science related courses like: algorithmics, C, Java and Python programming, databases, modeling languages (UML). %Every year, that is an average of 800 students and 20 teachers that use MarkUs in each of the aforementioned institutions. %to be completed
 
 
 %GM: I suggest to remove the following paragraph
@@ -316,46 +318,47 @@ The introduction of a new tool in a pedagogical process needs to be monitored in
 %How the learning process gets improved? How can it be measured? (facts, like: number of students submitting after the deadline; comparisons between the time taken by teachers to comment students works - we have this kind of info from the use if MarkUs by our teachers here at Centrale Nantes, ?)
 
 \subsection*{Analysis criteria}
-
-We evaluate the benefit of MarkUs according to several criteria, that are following: 
+A study at Ecole Centrale Nantes evaluated the benefit of MarkUs according to several criteria: 
 \begin{itemize}
-\item Quantitatively: how much does MarkUs increases the speed of the assessment process, how it enhances the number of individual comments left on each students' paper, how students' final evaluation improves thanks to the use of MarkUs during courses;
+\item Quantitatively: how much does MarkUs increase the speed of the assessment process, how does it enhance the number of individual comments on each students' paper, do students' final evaluation improve thanks to the use of MarkUs during courses;
 \item Qualitatively: through annual surveys of teachers and students to validate the adequacy of the tool to teachers' needs, the improvement of teaching and the efficiency in the assessment process.
 \end{itemize}
 
-Thanks to these analysis processes, we have collected the following key figures: 
+Using these analysis processes, we have collected the following key figures: 
 \begin{itemize}
-\item Thanks to MarkUs, all teachers spend less time to assess the same quantity of students' papers. This time has decreased from a percentage between 14\% and 50\%, depending on the teacher. 
-\item The number of students submitting their work after the deadline has drastically decreased: before MarkUs has been adopted, this number was between 15\% and 20\% (students argued there was a misunderstanding about the final deadline, or that they have problems with their emails, \dots).  Now, this number is between 5\% and 10\%. As students know the submission deadline is now an automatic process, they do not try anymore to cheat with this constraint. 
-\item There has been a reduction over the number of students' practical work reports that are sent back after the final exam (this number has been divided by 2). As the whole grading process has been made easier and faster, teachers are more willing to do this assessment than before. 
+\item Thanks to MarkUs, all teachers spend less time to assess the same quantity of students' papers. This time has decreased between 14\% and 50\%, depending on the teacher. 
+\item The number of students submitting their work after the deadline has drastically decreased: before MarkUs has been adopted, this number was between 15\% and 20\% (students argued there was a misunderstanding about the final deadline, or that they have problems with their emails, \dots).  Now, this number is between 5\% and 10\%. As students know the submission deadline is now an automatic process, they no longer try to cheat with this constraint. 
+\item Since adopting MarkUs, the number of students' practical work reports that are returned to students after the final exam has been cut in half - a dramatic reduction. As the whole grading process has been made easier and faster, teachers are more motivated to do this assessment than before. 
 \end{itemize}
 
-These factors have reinforced the idea that MarkUs was responding to needs that have been expressed for many years. It naturally fits into the learning context, it is easy to handle and, finally, it improves the understanding of students w.r.t. the reports and works they have to prepare (ability to get a personal comment on the submitted work, respect of deadlines, etc.).
+These factors have reinforced the idea that MarkUs was responding to needs that have been expressed for many years. It naturally fits into the learning context, it is easy to handle and, finally, it provides important feedback to the students on their work, and helps them understand the expectations.
+
+While we have not carried out a similar study at the University of Toronto, we frequently solicit informal feedback from our users. Instructors confirm the above findings that the work involved in collecting and grading student submissions has significantly decreases.
 
 \subsection*{Results}
 
-MarkUs is a tool that makes life easier for students and graders thanks to a wide range of useful features, such as: the centralized and versioned submission of the papers, its assessment, the annotation of the code and images/PDF documents directly from the web interface, the possibility to download the documents on his own computer to test the code of the students, etc.. As all these  features have been developed specifically for the educational context, MarkUs improves the global pedagogical quality: it offers the possibility to share annotations among multiple teachers and incorporates a correction (and notation) grid defined by the head-supervisor. It also provides an additional organizational element: it is easy and quick to make corrections on large cohorts (e.g. by using "reference annotations" that just copy / paste the most recurrent mistakes) and it is therefore more motivating for teachers. As a noticeable side effect compared with traditional organization of practical sessions in computer science course, there has been a drastic decrease in the amount of paper that is used. 
+MarkUs is a tool that makes life easier for students and graders thanks to a wide range of useful features, such as: the centralized and versioned submission of the papers, assessment tools, the annotation of the code and images/PDF documents directly from the web interface, the ability to download the documents on his own computer to test the code of the students, etc.. As all these  features have been developed specifically for the educational context, MarkUs improves the global pedagogical quality: annotations can be shared among multiple teachers and incorporates a correction (and notation) grid defined by the head-teacher. It also provides an additional organizational element: it is easy and quick to make corrections on large cohorts (e.g. by making it easy to reuse the same annotations on recurrent mistakes with just a click or two of the mouse) and it is therefore more motivating for teachers. As a noticeable side effect compared with traditional organization of practical sessions in computer science course, there has been a drastic decrease in the amount of paper that is used. 
 
 \subsection*{Analysis of the impact}
 
-Students have become much more respectful of deadlines than they were before, thanks to the fact of not being able to submit the papers once the due date is past. MarkUs has raised more interest to the annotations left on the platform. In addition, students have appreciated the increased speed correction from their teachers. 
+Students have become much more respectful of deadlines than they were before, thanks to the fact of not being able to submit the papers once the due date is past. Student appreciate the ability to submit their work from their home computer and being able to double check exactly what they have submitted. MarkUs has raised more interest to the annotations left on the platform. In addition, students appreciate receiving prompt feedback and correction from their teachers.
 
-As far as the educational team is concerned, MarkUs has helped to unify the criteria for marking groups: even if a large number of students do not have the same teachers, their work is assessed according to the same criteria grid. 
+As far as the educational team is concerned, MarkUs has helped to unify the criteria for marking groups: even if a large number of students do not have the same teachers, their work is assessed according to the same marking criteria. 
 
 \subsection*{Dissemination}
 
 MarkUs is developed through a strong international collaboration between three institutions of higher education. These institutions include research laboratories. The philosophy of the research is rooted in the DNA of the software. MarkUs follows a development process perfectly framed, reinforced by rigorous and efficient quality assurance methods. Moreover, we spend much effort to disseminate our results through publications and conferences. The software, its functionality and its impact on the landscape of higher education were presented at various events. MarkUs received the special mention prize at the third "Troph\'{e}es des Technologies Educative" of the french "Salon de l'Education / Educatice". 
-The availability of source code from MarkUs on the collaborative and social platform GitHub gives an international visibility to the project. In addition, we currently help current teachers from various european institutions in their prepratory work  for deploying MarkUs.
+The availability of source code from MarkUs on the collaborative and social platform GitHub gives an international visibility to the project. In addition, we are currently helping teachers from various European institutions in their preparatory work in deploying MarkUs.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{CONCLUSION AND FURTHER WORK}
 
-So far, the students' works were either paper-printed or emailed to their teachers. MarkUs greatly simplifies these steps by centralizing all these documents. It manages classes and and allows students to work in groups. The software allows teachers to get an overview of the different steps achieved by students thanks to versioning features. As the papers and the corresponding personal assessment are centralized on a single platform, every student can access at any time to their work and the related comments, notes and evaluations of their teachers. This is a major breakthrough compared to the traditional use of paper. The integration of MarkUs in the learning environment results in numerous advantages, for both students and teachers.
+Until recently, students submitted their work by printing it on paper or by emailing it to their teachers. MarkUs greatly simplifies these steps by centralizing these documents. It manages classes and and allows students to work in groups. The software allows teachers to get an overview of intermediate work   by students thanks to versioning features. As the papers and the corresponding personal assessment are centralized on a single platform, every student can readily access their work and the related comments, notes and evaluations of their teachers. This is a major step forward compared to the traditional use of paper. The integration of MarkUs in the learning environment results in numerous advantages, for both students and teachers.
 
-Current work focus on the implementation of a testing framework into MarkUs. This means the code submitted by students would be immediately compiled and checked w.r.t. criterias defined by teachers. We also investigate the integration of a plagiarism detection tool into the application, to get automatic hints about the similarity of a submission compared to a previous one. Some of these results would be displayed to students, which would also be a way to prevent them from plagiarism. Finally, we currently study how MarkUs could be extended to meet the needs of research, especially during the peer-reviewing process. 
+Current work focuses on the incorporation of a testing framework into MarkUs. This means the code submitted by students would be immediately compiled and tested using criteria defined by teachers. We are also investigating the integration of a plagiarism detection tool into the application, to get automatic hints about the similarity of a submission compared to others. Some of these results would be displayed to students, which may deter them from plagiarizing. Finally, we continue to study how MarkUs could be extended to meet the needs of research, especially during the peer-reviewing process. 
 
-Based on a policy of innovation both demanding (through the quality assurance process that made the quality of the software) and ambitious, MarkUs owes its success to the close answer it gives to teachers and students' needs. 
+Based on a policy of innovation both demanding (through the quality assurance process) and ambitious (working directly with teachers and students to continually improve both the features and the user interface), the success MarkUs lies in how closely it meets the needs of both teachers and students.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section*{VARIOUS GUIDELINES}
