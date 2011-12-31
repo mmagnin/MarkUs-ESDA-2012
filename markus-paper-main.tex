@@ -222,32 +222,50 @@ As the development of MarkUs takes profit from the dynamics of project-based lea
 %Global presentation of the main MarkUs features
 
 As a web-application, MarkUs is cross-platform (Windows, Mac OS X, Linux,
-etc.). As MarkUs can be used through any web browser, it is therefore
-well-suited to nomadism situations that students and faculty members may
+etc.). Since MarkUs can be used through any web browser, and is
+well-suited to the variety of situations that students and faculty members may
 encounter in their daily life. MarkUs features are summarized in Figure~\ref{fig:features}.
 
-Instructors can enforce submission deadlines, marking schemes, automatic
-penalties, and group and grader management (max and min number of students per
-groups, who grades which student group or what part of the assignment).
+Each course has its own instance of MarkUs. This simplifies administration and means that if there is a problem with one instance of MarkUs, only that course is affected. At the beginning of a course, the instructor configures MarkUs by adding students, graders, and possibly co-instructors.
 
-Once the assignment is properly set up, students can start forming groups by
-inviting other students, accepting or rejecting invitations. When group
-requirements are met, they can start submitting their source code, diagrams,
-pictures and schemas on MarkUs. In order to handle automatic version control,
-a subversion repository is plugged in the backend of the webfile upload. For
-more advanced courses, direct command line access to the repository is
-possible.
+An instructor creates an assignment and configures it by setting the submission deadline as well as the default penalties for late submission. The instructor determines if students will work alone or in groups. The instructor can upload a file that assigns students to specific groups, or may allow students to form their own groups with a specified minimum and maximum group size.
 
-After the due date is passed, graders can easily annotate students' code,
-diagrams and pictures. MarkUs allows instructors to create annotation
-categories, load default annotations and graders to save some. Hence, graders
-do not need to retype commonly used comments. In order to facilitate
-consistent grading, two marking schemes are available: a criteria based one,
-or a flexible grading system.
+Once the assignment has been created, students may begin submitting files. Students may submit multiple times before the deadline, and can look at the files they submit to confirm that they have submitted correctly. If students form their own groups, they may only begin submitting files once the group has the minimum number of members, and invited members may only view their group's submissions after they have explicitly accepted the invitation.
 
-On the fly feedback on grades is given to instructors, allowing marking
-schemes readjustments. When grades are released, students can view feedbacks
-and marks of assignments online, or download a PDF version.
+Before the graders begin marking, the instructor configures a marking scheme, creates annotation categories, and optionally creates a set of pre-defined annotations that may be used by the graders. The instructor also determines which graders mark each submission and/or which parts of the assignment.
+
+The instructor monitors the progress of the graders and when the graders have completed the marking, releases the results to the students. The instructor may also download the grades for each assignment.
+
+A major goal of MarkUs is to streamline the workflow of the graders. Each grader sees a list of the students or groups that that grader is to mark. Figure~\ref{fig:grader} illustrates how the grader carries out his or her work.  The grader sees the file or files submitted by a student in the left half of the screen and can create new annotations or select a predefined annotation from one of the existing categories. On the right side the the screen is a marking scheme that the grader fills in. The grader can also switch to view a list of all annotations and add some general comments, or see a summary of the group's results.  When a grader has finished marking one student or group's work, the grader sets the status to complete.
+
+When the instructor releases the results, students see a read-only version of the grader view, and read the annotations and marking scheme. Students may also download a PDF version of their results for their archives.
+
+More recent features include a simple grade spreadsheet that can be used to enter marks for tests or labs where a full assignment interface is not required, charts and summary information about each assignment, and the ability to annotate PDF files.
+
+The general philosophy of MarkUs is a permissive one, allowing users to perform tasks that might not be allowed, but to provide warning messages. For example, if a student tries to submit a file after the deadline, the student will see a prominent message explaining that the submission will not likely be graded, but the student is allowed to proceed. This approach makes it more straightforward to handle special cases without extra effort, while still enforcing deadlines.
+
+%Instructors can enforce submission deadlines, marking schemes, automatic
+%penalties, and group and grader management (max and min number of students per
+%groups, who grades which student group or what part of the assignment).
+
+%Once the assignment is properly set up, students can start forming groups by
+%inviting other students, accepting or rejecting invitations. When group
+%requirements are met, they can start submitting their source code, diagrams,
+%pictures and schemas on MarkUs. In order to handle automatic version control,
+%a subversion repository is plugged in the backend of the webfile upload. For
+%more advanced courses, direct command line access to the repository is
+%possible.
+
+%After the due date is passed, graders can easily annotate students' code,
+%diagrams and pictures. MarkUs allows instructors to create annotation
+%categories, load default annotations and graders to save some. Hence, graders
+%do not need to retype commonly used comments. In order to facilitate
+%consistent grading, two marking schemes are available: a criteria based one,
+%or a flexible grading system.
+
+%On the fly feedback on grades is given to instructors, allowing marking
+%schemes readjustments. When grades are released, students can view feedbacks
+%and marks of assignments online, or download a PDF version.
 
 \begin{figure*}[htbp]
 	\centering
@@ -256,37 +274,39 @@ and marks of assignments online, or download a PDF version.
 	\label{fig:features}
 \end{figure*}
 
+\begin{figure*}[htbp]
+	\centering
+		\includegraphics[width=0.95\textwidth]{images/graderview.png}
+	\caption{MarkUs features.}
+	\label{fig:grader}
+\end{figure*}
 %%% Add one screenshot of MarkUs, maybe about annotation of code
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{THE DEPLOYMENT OF MARKUS}
 
-MarkUs has been used in Computer Science related courses since 2007 in Canada and since 2010 in France. In this section, we will detail how students and teachers get used to the tool.
+MarkUs has been used in Computer Science related courses since Fall 2009 in Canada and since 2010 in France. In this section, we will detail how students and teachers learn to use the tool.
 
 \subsection*{An overview of the use of MarkUs in Higher Education}
 
 MarkUs is currently used at the University of Toronto, University of Waterloo and Ecole Centrale de Nantes: 
-%\begin{itemize}
-%\item In University of Toronto, ... %to be filled with info about the number of students and courses impacted
-%\item In University of Waterloo, ... %to be filled with info about the number of students and courses impacted
-%\item In Ecole Centrale de Nantes, MarkUs has been used since 2010. 
-MarkUs impacts both undergraduate and master students, in Computer Science related courses like: algorithmics, C and Java programming, databases, modeling languages (UML). Every year, that is an average of 800 students and 20 teachers that use MarkUs in each of the aforementioned institutions. %to be completed
-%\end{itemize}
+\begin{itemize}
+\item At the University of Toronto, MarkUs was first deployed in the fall of 2009. In the fall of 2011 it was used in 8 different courses (15 sections) in Computer Science and Engineering for a total of more than 1200 students. The largest course had 650 students in 5 sections. 
+\item At the University of Waterloo, MarkUs has been used since the fall of 2010 in two large first year courses with more than 800 students each term.
+\item In Ecole Centrale de Nantes, MarkUs has been used since 2010. FIXME
+\end{itemize}
+
+MarkUs impacts both undergraduate and master students, in Computer Science related courses like: algorithmics, C and Java programming, databases, modeling languages (UML). %Every year, that is an average of 800 students and 20 teachers that use MarkUs in each of the aforementioned institutions. %to be completed
+
 
 %GM: I suggest to remove the following paragraph
-During the last semester, we have been contacted by teachers from various Universities and engineering schools. These teachers would like to give a try to MarkUs in order to overcome the limits of their existing grading process. We are currently helping them in order to make their use be as successful as ours. 
+%During the last semester, we have been contacted by teachers from various Universities and engineering schools. These teachers would like to give a try to MarkUs in order to overcome the limits of their existing grading process. We are currently helping them in order to make their use be as successful as ours. 
 
-\subsection*{How teachers are accompanied to use the tool? How they use it?}
+\subsection*{Training for teachers and graders}
 
-MarkUs is easy to handle, thus its use does not require a long formation. It
-is provided with an extensive documentation, available in both English and
-French. This documentation has been structured so that the head-teacher,
-teachers and students can find the information they are looking for. There are
-as many documentation cases as these three situations, meaning we have a
-manual for administrators (which should be the head of a course), graders
-(i.e. teachers) and students. 
+MarkUs is easy to handle, and does not require much training. A manual for each type of user (administrators, graders, and students) guides the user through the basic operation. Documentation is provided in both French and English and helps users understand the underlying model as well as some of the less obvious operations.
 
-In our institutions, there are one or two teachers that play the role of "referees" for the software, meaning that every encountered issue can be forwarded to them. Thanks to their knowledge about MarkUs, they can help their fellow teachers with problems that can be overcome. When the issue is an unknown one, they can contact the development team, that may open a ticket. It is fundamental to have these people as interfaces with the development team, allowing to synthesize feedback and give hints about awaited features. 
+In our institutions, there are one or two teachers that provide general support for the software, meaning that every encountered issue can be forwarded to them. Thanks to their knowledge about MarkUs, they help their fellow teachers better understand how to use the system. When the issue is an unknown one, they can contact the development team, that may open a ticket. It is fundamental to have these people to liaise with the development team, allowing the development team to synthesize feedback and prioritize requests for additional features. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{THE IMPACT OF MARKUS}
